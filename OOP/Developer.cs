@@ -21,7 +21,7 @@ namespace OOP
         }
         public override void PositionEmployee()
         {
-            Console.WriteLine("Position developer");
+            Console.WriteLine("Position developer \n");
         }
     }
 }

@@ -22,7 +22,7 @@ namespace OOP
         }
         public override void PositionEmployee()
         {
-            Console.WriteLine("Position designer");
+            Console.WriteLine("Position designer \n");
         }
     }
 }

@@ -16,6 +16,8 @@ namespace OOP
         protected double LevelNumber { get; set; }
         protected DateTime OnboardData { get; set; }
 
+        GenerateId id = new GenerateId();
+
         public Employee()
         {
 
@@ -39,8 +41,8 @@ namespace OOP
 
         public void InputEmployee()
         {
-            Console.WriteLine("Enter code of employee");
-            EmployeeCode = Console.ReadLine();
+
+            EmployeeCode = id.generateId();
             Console.WriteLine("Enter name of employee: ");
             Name = Console.ReadLine();
             while (!!Regex.IsMatch(Name, "[^a-zA-Z0-_ ]+"))
@@ -89,9 +91,7 @@ namespace OOP
                 {
                     Console.WriteLine("Input incorrect! please try again");
                 }
-            }
-
-          
+            }  
         }
 
         public void OutputEmployee()
@@ -100,8 +100,10 @@ namespace OOP
             Console.WriteLine("Name: " + Name);
             Console.WriteLine("BaseSalary: " + BaseSalary);
             Console.WriteLine("LevelNumber: " + LevelNumber);
-            Console.WriteLine("Onboard date: " + OnboardData + "\n");
+            Console.WriteLine("Onboard date: " + OnboardData);
+            this.PositionEmployee();
         }
+
         public double CountSalary()
         {
             var today = DateTime.Now;

@@ -94,7 +94,7 @@ namespace OOP
                     foreach (Employee e in employees)
                     {
                         string manager = e.GetType().Name;
-                        if (manager == "Manager")
+                        if (manager == TypeEmployee.Manager.ToString())
                         {
                             nameManager = e.getName();
                         }
@@ -114,16 +114,16 @@ namespace OOP
                 foreach (Employee e in employees)
                 {
                     string name = e.GetType().Name;
-                    if (name == "Manager")
+                    if (name == TypeEmployee.Manager.ToString())
                     {
                         manager++;
                         employee = e.getName();
                     }
-                    else if (name == "Developer")
+                    else if (name == TypeEmployee.Developer.ToString())
                     {
                         developer++;
                     }
-                    else if (name == "Designer")
+                    else if (name == TypeEmployee.Designer.ToString())
                     {
                         designer++;
                     } 
@@ -142,5 +142,12 @@ namespace OOP
     }
 
 
+}
+enum TypeEmployee
+{
+    Developer,
+    Manager,
+    Tester,
+    Designer
 }
 
