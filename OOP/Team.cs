@@ -16,6 +16,7 @@ namespace OOP
         }
         public void InputOtherEmployee(Employee employee, string manager)
         {
+            int flag = -1;
             foreach (List<Employee> employees in listMemberInCompany)
             {
                 foreach (Employee e in employees)
@@ -24,9 +25,15 @@ namespace OOP
                     if (code == manager)
                     {
                         employees.Add(employee);
-                        break;
-                    }
+                        Console.WriteLine("Add successlly!");
+                        flag++;
+                        return;
+                    } 
                 }
+            }
+            if(flag == -1)
+            {
+                Console.WriteLine("Not found code manager!");
             }
         }
         public void OutputEmployee()
@@ -56,7 +63,7 @@ namespace OOP
                         elementDelete++;
                     }
                 }
-                team++;
+                team++; 
             }
             if (elementDelete == -1)
             {

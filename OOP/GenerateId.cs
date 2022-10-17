@@ -19,8 +19,8 @@ namespace OOP
                 string rndIngr = ingredients[rnd.Next(ingredients.Length)];
                 result += rndIngr;
             }
-
             return result;
         }
     }
 }
+    

@@ -12,7 +12,7 @@ namespace OOP
     {
         protected string EmployeeCode { get; set; }
         protected string Name { get; set; }
-        protected int BaseSalary { get; set; }
+        protected double BaseSalary { get; set; }
         protected double LevelNumber { get; set; }
         protected DateTime OnboardData { get; set; }
 
@@ -22,7 +22,7 @@ namespace OOP
         {
 
         }
-        public Employee(string employeeCode, string name, int baseSalary, double levelNumber, DateTime onboardData)
+        public Employee(string employeeCode, string name, double baseSalary, double levelNumber, DateTime onboardData)
         {
             this.EmployeeCode = employeeCode;
             this.Name = name;
@@ -39,10 +39,15 @@ namespace OOP
             return this.EmployeeCode;
         }
 
+        public double baseSalary()
+        {
+            return this.BaseSalary = 1000000;
+        }
         public void InputEmployee()
         {
 
             EmployeeCode = id.generateId();
+            this.baseSalary();
             Console.WriteLine("Enter name of employee: ");
             Name = Console.ReadLine();
             while (!!Regex.IsMatch(Name, "[^a-zA-Z0-_ ]+"))
@@ -50,20 +55,7 @@ namespace OOP
                 Console.WriteLine("Input incorrect! please try again");
                 Name = Console.ReadLine();
             }
-            while (true)
-            {
-                try
-                {
 
-                    Console.WriteLine("Enter base salary of employee: ");
-                    BaseSalary = Convert.ToInt32(Console.ReadLine());
-                    break;
-                }
-                catch
-                {
-                    Console.WriteLine("Input incorrect! please try again");
-                }
-            }
             while (true)
             {
                 try
@@ -103,12 +95,12 @@ namespace OOP
             Console.WriteLine("Onboard date: " + OnboardData);
             this.PositionEmployee();
         }
-
+       
         public double CountSalary()
         {
             var today = DateTime.Now;
             var WorkingDate = today - this.OnboardData;
-            return Convert.ToInt32(this.BaseSalary) * Convert.ToInt32(WorkingDate.Days) * this.LevelNumber;
+            return Convert.ToInt32(this.baseSalary()) * Convert.ToInt32(WorkingDate.Days) * this.LevelNumber;
         }
         public abstract void PositionEmployee();
     }
