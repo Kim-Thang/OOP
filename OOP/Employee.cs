@@ -91,7 +91,7 @@ namespace OOP
                 {
                     Console.WriteLine("Input incorrect! please try again");
                 }
-            }  
+            }
         }
 
         public void OutputEmployee()

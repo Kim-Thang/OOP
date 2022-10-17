@@ -45,7 +45,7 @@ namespace OOP
         {
 
             int elementDelete = -1;
-            int team = 0;
+            int team = -1;
             foreach (List<Employee> employees in listMemberInCompany)
             {
                 foreach (Employee e in employees)

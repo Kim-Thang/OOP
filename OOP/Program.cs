@@ -59,6 +59,7 @@ do
                     manager.InputEmployee();
                     team.InputManager(manager);
                     break;
+
                 case (int) Position.DEVELOPER:
                     Employee developer = new Developer();
                     developer.InputEmployee();
@@ -66,6 +67,7 @@ do
                     string codeManager = Console.ReadLine();
                     team.InputOtherEmployee(developer, codeManager);
                     break;
+
                 case (int) Position.TESTER:
                     Employee tester = new Tester();
                     tester.InputEmployee();
@@ -73,6 +75,7 @@ do
                     codeManager = Console.ReadLine();
                     team.InputOtherEmployee(tester, codeManager);
                     break;
+
                 case (int) Position.DESIGNER:
                     Employee desinger = new Designer();
                     desinger.InputEmployee();
@@ -80,6 +83,7 @@ do
                     codeManager = Console.ReadLine();
                     team.InputOtherEmployee(desinger, codeManager);
                     break;
+
                 default:
                     break;
             }
@@ -88,23 +92,28 @@ do
             Console.WriteLine("Show all employee in company: ");
             team.OutputEmployee();
             break;
+
         case (int) Option.REMOVE_EMPLOYEE:
             Console.WriteLine("Enter code employee you need remove: ");
             string codeEmployeeNeedRemove = Console.ReadLine();
             team.RemoveEmployee(codeEmployeeNeedRemove);
             break;
+
         case (int) Option.SHOW_TOTAL_SALARY:
             double totalSalary = team.TotalSalary();
             Console.WriteLine("Total salary of all employee: " + totalSalary);
             break;
+
         case (int) Option.SHOW_MANAGER_MOST_EMPLOYEE:
             Console.WriteLine("Name of manager who have most crowded member in the company: ");
             team.getManagerManyMembers();
             break;
+
         case (int) Option.SHOW_MANAGER_NOT_ENOUGH_4_POSITION:
             Console.WriteLine("Show the name of manager in team not enough 4 positions: ");
             team.getManagerNotEnoughMember();
             break;
+
         default:
             flag = 1;
             break;
